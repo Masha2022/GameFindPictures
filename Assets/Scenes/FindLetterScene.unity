@@ -337,7 +337,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -411,55 +410,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc9ccb3692531034db0888d82d693e5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spritesLetters:
-  - {fileID: 21300000, guid: 58162733911f7bc41b249fff5fa6a211, type: 3}
-  - {fileID: 21300000, guid: 0eada81b8f28e3948923f0e5fc79aa3f, type: 3}
-  - {fileID: 21300000, guid: ea93a5691b23a464ba19c1d72b4eebbb, type: 3}
-  - {fileID: 21300000, guid: ee012f0aeeed1034e95d732df541d225, type: 3}
-  - {fileID: 21300000, guid: 7d327cc9743a69d4f9cd7f0c8318b70e, type: 3}
-  - {fileID: 21300000, guid: c41dec212b441f545a94ccca3b4de895, type: 3}
-  - {fileID: 21300000, guid: 57cf688eebf80204398bd7a49ceb387f, type: 3}
-  - {fileID: 21300000, guid: e32509528b488174190856e746346d88, type: 3}
-  - {fileID: 21300000, guid: a0b6ac975d14d0e4cb5d781dfe1791a7, type: 3}
-  - {fileID: 21300000, guid: 756dcad71ad9359418ab948f566ded24, type: 3}
-  - {fileID: 21300000, guid: a49deebd6caea8f4bbaffac4aa7db25d, type: 3}
-  - {fileID: 21300000, guid: 2a7c5b2c6ae268c40ad703a373717838, type: 3}
-  - {fileID: 21300000, guid: ea2653b37f791b3479ea2bbe1c3d6193, type: 3}
-  - {fileID: 21300000, guid: 6c929c74e6bfb7e458675b2434f99b3c, type: 3}
-  _spritesNumbers:
-  - {fileID: 21300000, guid: 1111d43d84c0761488b90104c7d1a0ed, type: 3}
-  - {fileID: 21300000, guid: 56082e24ae1b17643b9d3665e9917bd5, type: 3}
-  - {fileID: 21300000, guid: b30ff66a2d1166948b79b7d86c3d1b87, type: 3}
-  - {fileID: 21300000, guid: a5dff91a41862d14cbcfb2dfb0953c1b, type: 3}
-  - {fileID: 21300000, guid: 826fb5b70c602f246bb62b321b23903b, type: 3}
-  - {fileID: 21300000, guid: cc3cc60a4d925d84ba9cf4481da11ed7, type: 3}
-  - {fileID: 21300000, guid: e5b807c023edbb644a4c396a22b57968, type: 3}
-  - {fileID: 21300000, guid: 5ed38b7366cd6b0408c6197c8e1965b5, type: 3}
-  - {fileID: 21300000, guid: df1c543f7fac40648b9ba99ee740abdb, type: 3}
-  - {fileID: 21300000, guid: e27f3577cc66f234c937944feb6534f6, type: 3}
-  _spritesAnimals:
-  - {fileID: 21300000, guid: 1397a6abcda9c354fa095d6be1fc76fb, type: 3}
-  - {fileID: 21300000, guid: 304f656698ad18b43bb9d5afb7ce8cd0, type: 3}
-  - {fileID: 21300000, guid: 3963a8190230a0f42a9ae2e694aa3cf8, type: 3}
-  - {fileID: 21300000, guid: b15584cdce97cb6449d1cacbd9f61a2e, type: 3}
-  - {fileID: 21300000, guid: 7dc9ec55423d85a48b75f28760398e68, type: 3}
-  - {fileID: 21300000, guid: 4c4f45657d11d3640a8dcd6d3e3b4e35, type: 3}
-  - {fileID: 21300000, guid: 6cc53666971a73344ab48cd25d3a3a0f, type: 3}
-  - {fileID: 21300000, guid: 401f5905c4b2e384b87fa25041b39a44, type: 3}
-  - {fileID: 21300000, guid: 54ebcefe2151e924fb3d2fd17b773f9d, type: 3}
-  - {fileID: 21300000, guid: 876ca559ade60444aa32d9185d58052e, type: 3}
 --- !u!224 &561827500 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2288475550405264674, guid: 37971b7969c9b8b40b0499e0c3fc8b8b, type: 3}
@@ -1200,7 +1150,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 519420033}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ScriptableObject, Assembly-CSharp
         m_MethodName: ReturnIndexList
         m_Mode: 1
