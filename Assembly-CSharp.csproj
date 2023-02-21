@@ -41,10 +41,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\ScriptableObject.cs" />
      <Compile Include="Assets\Scripts\GameController.cs" />
+     <Compile Include="Assets\Scripts\ScriptableObject.cs" />
      <Compile Include="Assets\Scripts\LevelsController.cs" />
-     <Compile Include="Assets\Scripts\Test.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Materials\SpritesForStartScreen" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

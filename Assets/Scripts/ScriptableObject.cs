@@ -1,17 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Button = UnityEngine.UI.Button;
+using Image = UnityEngine.UIElements.Image;
 
-public class NewBehaviourScript : MonoBehaviour
+public class ScriptableObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private List<Sprite> _lettersSprites;
+    [SerializeField] private List<Sprite> _numbersSprites;
+    [SerializeField] private List<Sprite> _animalsSprites;
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private Button _buttonLetters;
+    [SerializeField] private Button _buttonNumbers;
+    [SerializeField] private Button _buttonAnimals;
+
+    private int _indexForSet;
+    private List<List<Sprite>> _allSetsSprites;
+
+    private string _indexSet;
+
+    public void OnClick()
     {
         
     }

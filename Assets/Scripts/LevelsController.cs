@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class LevelsController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private int _easyLevel = 3;
+    private int _normalLevel = 6;
+    private int _hardLevel = 9;
 }
