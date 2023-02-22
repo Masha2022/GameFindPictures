@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class LevelsController : MonoBehaviour
 {
-    private int _easyLevel = 3;
-    private int _normalLevel = 6;
-    private int _hardLevel = 9;
+    //Скрипт будет отвечать за настройки уровня(3,6,9) и передавать их в GameController
+   
 }
