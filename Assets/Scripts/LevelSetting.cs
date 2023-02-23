@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,24 +14,26 @@ public class LevelSetting : MonoBehaviour
     [SerializeField] private Canvas _startMode;
     [SerializeField] private Canvas _playMode;
 
-    public Action OnWin;//Должен вызываться в стейт машине, чтобы включить экран победы
-    
+    public Action OnWin; //Должен вызываться в стейт машине, чтобы включить экран победы
+
     private IReadOnlyList<Sprite> _sprites;
-    private List<Sprite> _spritesForGame= new List<Sprite>();
-    
+    private List<Button> _buttonsOnScene = new List<Button>();
+    [SerializeField] private Canvas _restartMode;
+    private List<Sprite> _spritesForTarget = new List<Sprite>();
+
 
     public void ChangeMode()
     {
         _sprites = _startMode.GetComponent<ScriptableObject>().GetSetSprites();
-      
+
         foreach (var sprite in _sprites)
         {
-            _spritesForGame.Add(sprite); 
+            _spritesForTarget.Add(sprite); 
         }
         
         _startMode.enabled = false; //за это должна отвечать стейт машина
         _playMode.enabled = true; //за это должна отвечать стейт машина
-        
+
         gameObject.GetComponent<TargetController>().SetGoal();
         CreateLevel();
         Debug.Log(_sprites.Count);
@@ -38,22 +41,36 @@ public class LevelSetting : MonoBehaviour
 
     private void CreateLevel()
     {
-        for (int i = 0; i < LevelsController.Level; i++)
+        //LevelsController.Level надо получать и контролировать из стейт машины
+
+        var level = LevelsController.Level;
+        for (int i = 0; i < level; i++)
         {
-            var index = Random.Range(0, _sprites.Count);
+            var index = ReturnRandomIndex();
+
             var child = Instantiate(_prefab, _gridLayout);
-            child.image.sprite = _spritesForGame[index];
-            //_spritesForGame.Remove(_spritesForGame[index]);
+            
+            child.image.sprite = _spritesForTarget[index];
+
+            child.onClick.AddListener(() => PlayMode(child.image.sprite));
+            _buttonsOnScene.Add(child);
+            _spritesForTarget.Remove(_spritesForTarget[index]);
         }
     }
 
-    private void PlayMode(int indexForSet)
+    private void PlayMode(Sprite sprite)
     {
-       // var target = GetComponent<TargetController>().
-       ////LevelsController.Level- это количество кнопок
-       //if (GetComponent<Button>().image.sprite.name == )
-       {
-           
-       }
+        var spriteForTarget = GetComponent<TargetController>().SpriteForTarget;
+
+        if (spriteForTarget.name == sprite.name)
+        {
+            _playMode.enabled = false;//задача для стейт машины
+            _restartMode.enabled = true;//задача для стейт машины
+        }
+    }
+
+    private int ReturnRandomIndex()
+    {
+        return Random.Range(0, _spritesForTarget.Count);
     }
 }
