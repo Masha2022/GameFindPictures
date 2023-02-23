@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Button = UnityEngine.UI.Button;
@@ -9,7 +10,7 @@ using Image = UnityEngine.UIElements.Image;
 
 public class ScriptableObject : MonoBehaviour
 {
-    //ScriptableObject(над названием подумаем) должен возвращать выбранный набор в GameController
+    //ScriptableObject(над названием подумаем) должен возвращать выбранный набор в LevelSetting
     private IReadOnlyList<Sprite> LettersSprites => _lettersSprites;
     private IReadOnlyList<Sprite> NumbersSprites => _numbersSprites;
     private IReadOnlyList<Sprite> AnimalsSprites => _animalsSprites;
@@ -18,37 +19,39 @@ public class ScriptableObject : MonoBehaviour
     [SerializeField]private List<Sprite> _numbersSprites;
     [SerializeField]private List<Sprite> _animalsSprites;
     
-    private List<Sprite> _spritesForGame = new List<Sprite>();
-    
+    public IReadOnlyList<Sprite> _spritesForGame = new List<Sprite>();
+
+    [SerializeField] private Camera _camera;
+    [SerializeField] private Canvas _playMode;
+
+    private void Start()
+    {
+        _playMode.enabled = false;
+    }
+
     public void ButtonClick(int indexForSet)
     {
         switch (indexForSet)
         {
             case 0:
-                foreach (var sprite in LettersSprites)
-                {
-                    _spritesForGame.Add(sprite);
-                }
-                Debug.Log("ButtonClick letters");
+                _spritesForGame = LettersSprites;
+                Debug.Log("ButtonClick letters"+_spritesForGame.Count);
+                _camera.GetComponent<LevelSetting>().ChangeMode();
                 break;
             case 1:
-                foreach (var sprite in NumbersSprites)
-                {
-                    _spritesForGame.Add(sprite);
-                }
-                Debug.Log("ButtonClick numbers");
+                _spritesForGame = NumbersSprites;
+                Debug.Log("ButtonClick numbers"+_spritesForGame.Count);
+                _camera.GetComponent<LevelSetting>().ChangeMode();
                 break;
             case 2:
-                foreach (var sprite in AnimalsSprites)
-                {
-                    _spritesForGame.Add(sprite);
-                }
+                _spritesForGame = AnimalsSprites;
+                _camera.GetComponent<LevelSetting>().ChangeMode();
                 Debug.Log("ButtonClick animals " +_spritesForGame.Count);
                 break;
         }
     }
 
-    public List<Sprite> GetSetSprites()//публичнй чтобы вызвать в GameController
+    public IReadOnlyList<Sprite> GetSetSprites()//публичнй чтобы вызвать в LevelSetting
     {
         return _spritesForGame;
     }

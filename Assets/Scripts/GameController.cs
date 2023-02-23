@@ -1,15 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour
+public class GameController 
 {
-    [SerializeField] private Canvas _startMode;
-    
-
-    private void Awake()
-    {
-       var _sprites = _startMode.GetComponent<ScriptableObject>().GetSetSprites();
-    }
+    // _stateMashine= new... 
+    //контролирует уровни
+    //вкл и выкл канвас
 }
