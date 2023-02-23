@@ -12,9 +12,12 @@ public class LevelSetting : MonoBehaviour
     [SerializeField] private Button _prefab;
     [SerializeField] private Canvas _startMode;
     [SerializeField] private Canvas _playMode;
-    [SerializeField] private Camera _camera;
+
+    public Action OnWin;//Должен вызываться в стейт машине, чтобы включить экран победы
+    
     private IReadOnlyList<Sprite> _sprites;
     private List<Sprite> _spritesForGame= new List<Sprite>();
+    
 
     public void ChangeMode()
     {
@@ -28,7 +31,7 @@ public class LevelSetting : MonoBehaviour
         _startMode.enabled = false; //за это должна отвечать стейт машина
         _playMode.enabled = true; //за это должна отвечать стейт машина
         
-        _camera.GetComponent<TargetController>().SetGoal();
+        gameObject.GetComponent<TargetController>().SetGoal();
         CreateLevel();
         Debug.Log(_sprites.Count);
     }
@@ -42,5 +45,15 @@ public class LevelSetting : MonoBehaviour
             child.image.sprite = _spritesForGame[index];
             //_spritesForGame.Remove(_spritesForGame[index]);
         }
+    }
+
+    private void PlayMode(int indexForSet)
+    {
+       // var target = GetComponent<TargetController>().
+       ////LevelsController.Level- это количество кнопок
+       //if (GetComponent<Button>().image.sprite.name == )
+       {
+           
+       }
     }
 }

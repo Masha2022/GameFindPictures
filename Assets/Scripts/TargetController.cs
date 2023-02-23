@@ -8,7 +8,7 @@ using Random = UnityEngine.Random;
 
 public class TargetController : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI _target;
+    [SerializeField] public TextMeshProUGUI _target;
     private IReadOnlyList<Sprite> _sprites;
     [SerializeField]private Canvas _startMode;
     private List<Sprite> _spritesForTarget = new List<Sprite>();

@@ -21,7 +21,7 @@ public class ScriptableObject : MonoBehaviour
     
     public IReadOnlyList<Sprite> _spritesForGame = new List<Sprite>();
 
-    [SerializeField] private Camera _camera;
+   // [SerializeField] private Camera _camera;
     [SerializeField] private Canvas _playMode;
 
     private void Start()
@@ -36,16 +36,16 @@ public class ScriptableObject : MonoBehaviour
             case 0:
                 _spritesForGame = LettersSprites;
                 Debug.Log("ButtonClick letters"+_spritesForGame.Count);
-                _camera.GetComponent<LevelSetting>().ChangeMode();
+                _playMode.GetComponent<LevelSetting>().ChangeMode();
                 break;
             case 1:
                 _spritesForGame = NumbersSprites;
                 Debug.Log("ButtonClick numbers"+_spritesForGame.Count);
-                _camera.GetComponent<LevelSetting>().ChangeMode();
+                _playMode.GetComponent<LevelSetting>().ChangeMode();
                 break;
             case 2:
                 _spritesForGame = AnimalsSprites;
-                _camera.GetComponent<LevelSetting>().ChangeMode();
+                _playMode.GetComponent<LevelSetting>().ChangeMode();
                 Debug.Log("ButtonClick animals " +_spritesForGame.Count);
                 break;
         }
