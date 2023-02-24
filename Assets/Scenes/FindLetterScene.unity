@@ -539,16 +539,12 @@ MonoBehaviour:
   _lettersSprites:
   - {fileID: 21300000, guid: 58162733911f7bc41b249fff5fa6a211, type: 3}
   - {fileID: 21300000, guid: 0eada81b8f28e3948923f0e5fc79aa3f, type: 3}
-  - {fileID: 21300000, guid: ea93a5691b23a464ba19c1d72b4eebbb, type: 3}
   - {fileID: 21300000, guid: ee012f0aeeed1034e95d732df541d225, type: 3}
   - {fileID: 21300000, guid: 7d327cc9743a69d4f9cd7f0c8318b70e, type: 3}
   - {fileID: 21300000, guid: c41dec212b441f545a94ccca3b4de895, type: 3}
   - {fileID: 21300000, guid: 57cf688eebf80204398bd7a49ceb387f, type: 3}
-  - {fileID: 21300000, guid: e32509528b488174190856e746346d88, type: 3}
-  - {fileID: 21300000, guid: a0b6ac975d14d0e4cb5d781dfe1791a7, type: 3}
   - {fileID: 21300000, guid: 756dcad71ad9359418ab948f566ded24, type: 3}
   - {fileID: 21300000, guid: a49deebd6caea8f4bbaffac4aa7db25d, type: 3}
-  - {fileID: 21300000, guid: 2a7c5b2c6ae268c40ad703a373717838, type: 3}
   - {fileID: 21300000, guid: ea2653b37f791b3479ea2bbe1c3d6193, type: 3}
   - {fileID: 21300000, guid: 6c929c74e6bfb7e458675b2434f99b3c, type: 3}
   _numbersSprites:
@@ -1093,7 +1089,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -1136,7 +1132,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1088673835
 RectTransform:
   m_ObjectHideFlags: 0
