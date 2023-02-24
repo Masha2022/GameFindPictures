@@ -23,10 +23,12 @@ public class ScriptableObject : MonoBehaviour
 
    // [SerializeField] private Camera _camera;
     [SerializeField] private Canvas _playMode;
+    [SerializeField] private Canvas _endMode;
 
     private void Start()
     {
         _playMode.enabled = false;
+        _endMode.enabled = false;
     }
 
     public void ButtonClick(int indexForSet)
