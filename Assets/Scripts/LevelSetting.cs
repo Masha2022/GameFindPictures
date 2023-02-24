@@ -68,7 +68,8 @@ public class LevelSetting : MonoBehaviour
             _restartMode.enabled = true;//задача для стейт машины
         }
     }
-
+    
+    
     private int ReturnRandomIndex()
     {
         return Random.Range(0, _spritesForTarget.Count);
