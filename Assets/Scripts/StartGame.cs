@@ -17,10 +17,11 @@ public class StartGame : MonoBehaviour
     [SerializeField] private List<Sprite> _lettersSprites;
     [SerializeField]private List<Sprite> _numbersSprites;
     [SerializeField]private List<Sprite> _animalsSprites;
-
-    private IReadOnlyList<Sprite> _spritesForGame = new List<Sprite>();
+    
     [SerializeField] private Canvas _playMode;
     [SerializeField] private Canvas _endMode;
+    
+    private IReadOnlyList<Sprite> _spritesForGame = new List<Sprite>();
 
     private void Start()
     {

@@ -11,7 +11,8 @@ public class LevelSettings : MonoBehaviour
     [SerializeField] private Canvas _startMode;
     [SerializeField] private Canvas _playMode;
     [SerializeField] private Canvas _endMode;
-
+    [SerializeField]private TargetUIController _targetText;
+    
     [SerializeField] private float _scaleDuration;
     [SerializeField] private float _scaleFactor;
 
@@ -21,6 +22,7 @@ public class LevelSettings : MonoBehaviour
     private Sprite _target;
     private int _level;
     private LevelsConstant _levelChange;
+    
 
     private void Start()
     {
@@ -47,15 +49,15 @@ public class LevelSettings : MonoBehaviour
         {
             var index = ReturnRandomIndex();
 
-            var button = Instantiate(_prefab, _gridLayout.transform);
-            button.image.sprite = _spritesForGame[index];
-            button.onClick.AddListener(() => PlayMode(button.image.sprite));
-            _buttonsOnScene.Add(button);
+            var child = Instantiate(_prefab, _gridLayout.transform);
+            child.image.sprite = _spritesForGame[index];
+            child.onClick.AddListener(() => PlayMode(child.image.sprite));
+            _buttonsOnScene.Add(child);
 
             _spritesForGame.Remove(_spritesForGame[index]);
         }
 
-        GetComponent<TargetUIController>().SetGoalUI();
+        _targetText.OnChangeText.Invoke();
     }
 
     private void PlayMode(Sprite sprite)
@@ -64,6 +66,7 @@ public class LevelSettings : MonoBehaviour
         {
             _playMode.enabled = false;
             _endMode.enabled = true;
+           
         }
         
         if (_target.name == sprite.name)
