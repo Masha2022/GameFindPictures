@@ -27,7 +27,6 @@ public class LevelSettings : MonoBehaviour
     private void Start()
     {
         _level = LevelsConstant.EasyLevel;
-        
     }
 
     public void ChangeMode()
@@ -68,16 +67,18 @@ public class LevelSettings : MonoBehaviour
             {
                 Destroy(button.gameObject);
             }
-
-            _buttonsOnScene.Clear();
-            _spritesForGame.Clear();
-
+            
             _level = GetComponent<LevelsConstant>().GetLevel();
             
             if (_level == -1)
             {
                 _playMode.enabled = false;
                 _endMode.enabled = true;
+            }
+            else
+            {
+                _buttonsOnScene.Clear();
+                _spritesForGame.Clear();
             }
             ChangeMode();
         }

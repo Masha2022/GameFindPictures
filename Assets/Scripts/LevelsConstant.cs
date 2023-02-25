@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelsConstant
+public class LevelsConstant: MonoBehaviour
 {
     public const int EasyLevel = 3;
     public const int NormalLevel = 6;
@@ -19,9 +19,10 @@ public class LevelsConstant
 
     public int GetLevel()
     {
-        if (_index < _levels.Count)
+        _index++;
+        if (_index == _levels.Count)
         {
-            _index++;
+            return -1;
         }
 
         return _levels[_index];
