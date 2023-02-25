@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartGame : MonoBehaviour, IStateMachine
+public class StartGame : MonoBehaviour
 {
     private IReadOnlyList<Sprite> LettersSprites => _lettersSprites;
     private IReadOnlyList<Sprite> NumbersSprites => _numbersSprites;
