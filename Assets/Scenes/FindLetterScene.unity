@@ -1036,6 +1036,7 @@ MonoBehaviour:
   _startMode: {fileID: 701610146}
   _playMode: {fileID: 944696279}
   _endMode: {fileID: 1069193096}
+  _targetText: {fileID: 944696281}
   _scaleDuration: 2
   _scaleFactor: 0.4
 --- !u!114 &944696283

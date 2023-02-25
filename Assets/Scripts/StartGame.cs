@@ -1,14 +1,7 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
-using Button = UnityEngine.UI.Button;
-using Image = UnityEngine.UIElements.Image;
 
-public class StartGame : MonoBehaviour
+public class StartGame : MonoBehaviour, IStateMachine
 {
     private IReadOnlyList<Sprite> LettersSprites => _lettersSprites;
     private IReadOnlyList<Sprite> NumbersSprites => _numbersSprites;

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class LevelSettings : MonoBehaviour
+public class LevelSettings : MonoBehaviour, IStateMachine
 {
     [SerializeField] private GridLayoutGroup _gridLayout;
     [SerializeField] private Button _prefab;
@@ -62,12 +62,7 @@ public class LevelSettings : MonoBehaviour
 
     private void PlayMode(Sprite sprite)
     {
-        if (_level == LevelsConstant.HeavyLevel)
-        {
-            _playMode.enabled = false;
-            _endMode.enabled = true;
-           
-        }
+        
         
         if (_target.name == sprite.name)
         {
@@ -79,7 +74,7 @@ public class LevelSettings : MonoBehaviour
             _buttonsOnScene.Clear();
             _spritesForGame.Clear();
 
-            _level = GetComponent<LevelsConstant>().GetLevel();
+            GetLevel();
             ChangeMode();
         }
 
@@ -100,5 +95,16 @@ public class LevelSettings : MonoBehaviour
         _target = _buttonsOnScene[index].GetComponent<Button>().image.sprite;
 
         return _target;
+    }
+
+    private void GetLevel()
+    {
+        _level = GetComponent<LevelsConstant>().GetLevel();
+            
+        if (_level == -1)
+        {
+            _playMode.enabled = false;
+            _endMode.enabled = true;
+        }
     }
 }

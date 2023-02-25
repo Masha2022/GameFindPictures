@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface IStateMachine
 {
-    private void Enter()
+    public void Enter()
     {
     }
 
