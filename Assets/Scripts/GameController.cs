@@ -6,5 +6,5 @@ public class GameController
 {
     // _stateMashine= new... 
     //контролирует уровни
-    //вкл и выкл канвас
+    //вкл и выкл стейт
 }

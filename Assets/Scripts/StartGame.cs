@@ -10,7 +10,6 @@ using Image = UnityEngine.UIElements.Image;
 
 public class StartGame : MonoBehaviour
 {
-    //должен возвращать выбранный набор в LevelSettings
     private IReadOnlyList<Sprite> LettersSprites => _lettersSprites;
     private IReadOnlyList<Sprite> NumbersSprites => _numbersSprites;
     private IReadOnlyList<Sprite> AnimalsSprites => _animalsSprites;
@@ -51,7 +50,7 @@ public class StartGame : MonoBehaviour
         }
     }
 
-    public IReadOnlyList<Sprite> GetSetSprites()//публичнй чтобы вызвать в LevelSettings
+    public IReadOnlyList<Sprite> GetSetSprites()
     {
         return _spritesForGame;
     }
